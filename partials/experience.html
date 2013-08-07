@@ -1,0 +1,21 @@
+<div ng-controller="EditCtrl">
+<h3>Experience</h3>
+<form id="myForm" class="form">
+<h4>Journey {{journey.name}}</h4>
+<input ng-model="journey.experience.date" ui-date>
+<lable for "description">Explain the experience</label>
+	<br />
+<textarea id="description" rows="4" ng-model = "journey.experience.description"></textarea>
+	<br />
+	<div class="btn-group" ng-model="journey.experience.emotion">
+	<button class="btn btn-large btn-danger" value="-3" >-3</button>
+	<button class="btn btn-large btn-danger" value="-2" >-2</button>
+	<button class="btn btn-large btn-warning" value="-1" >-1</button>
+	<button class="btn btn-large btn-warning" value="0"> 0</button>
+	<button class="btn btn-large btn-warning" value="1"> 1</button>
+	<button class="btn btn-large btn-success" value="2"> 2</button>
+	<button class="btn btn-large btn-success"> 3</button>
+</div>
+<button class="button btn-primary btn-large" ng:click='save()'>Save</button>
+	</form>
+</div>

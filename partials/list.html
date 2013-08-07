@@ -1,0 +1,22 @@
+  <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Project</th>
+        <th>Start</th>
+		<th>Complete</th>
+        <th><a href="#/new"><i class="icon-plus-sign"> </i> New</a></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="journey in journeys | filter:search | orderBy:'name'">
+        <td><a href="#/edit/{{journey._id.$oid}}">{{journey.name}}</a></td>
+        <td>{{journey.start}}</td>
+        <td>
+		<td>{{journey.complete}}</td>
+		<td>
+          <a href="#/edit/{{journey._id.$oid}}"><i class="icon-pencil"> </i> Edit</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>

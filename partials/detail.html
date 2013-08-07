@@ -1,0 +1,34 @@
+	<h3>Journey: {{journey.name}}</h3>
+    <form name="myForm">
+      <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="journey.name" value="{{journey.original.name}}" required>
+        <span ng-show="myForm.name.$error.required" class="help-inline">
+            Required</span>
+      </div>
+    
+      <div class="control-group" ng-class="{error: myForm.site.$invalid}">
+        <label>Start</label>
+        <input type="text" name="start" ng-model="journey.start" required>
+        <span ng-show="myForm.site.$error.required" class="help-inline">
+            Required</span>
+      </div>
+	  
+	   <div class="control-group" ng-class="{error: myForm.site.$invalid}">
+        <label>Complete</label>
+        <input type="text" name="complete" ng-model="journey.complete">
+        
+      </div>
+    
+      <label>Description</label>
+      <textarea name="description" ng-model="journey.description"></textarea>
+    
+      <br>
+      <a href="#/" class="btn">Cancel</a>
+      <button ng-click="update()" ng-disabled="isClean() || myForm.$invalid"
+              class="btn btn-primary">Save</button>
+      <button ng-click="destroy()"
+              ng-show="journey._id" class="btn btn-danger">Delete</button>
+    </form>
+  
+</div>

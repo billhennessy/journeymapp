@@ -1,0 +1,26 @@
+<div class='container'>
+    <h3>Journeys</h3><span>count: {{journeys.length}}</span>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Journey</th><th>Experiences</th><th>Emotional Average</th>
+            <th>Minimum | Maximum Emotion</th>
+            <th><a href="#journey/new" class="btn"><i class="icon-plus-sign"> </i> New</a></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="journey in journeys">
+
+
+            <td>{{journey.name}}</td>
+            <td>{{journey.experiences.length}}</td>
+            <td>{{journey.experiences | sum}}</td>
+            <td>{{journey.experiences | orderBy:'emotion':true | min}} | {{journey.experiences | orderBy:'emotion':false | min}} </td>
+            <td><a href="#journey/{{journey._id.$oid}}" class="btn"><i class="icon-pencil"> </i> Edit</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

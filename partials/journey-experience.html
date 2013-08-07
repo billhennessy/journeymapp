@@ -1,0 +1,15 @@
+<!--journey-experience.html -->
+<div class="container">
+	<h3>Journey: {{journey.name}}</h3>
+	
+	<label for="id">ID</label>
+	<input type="text" class="number" value="{{journey.id}}" disabled></input>
+	<label for="id">Name</label>
+	<input type="text" class="text" value="{{journey.name}}"></input>
+	<label for="id">Start</label>
+	<input type="text" class="date" value="{{journey.start}}"></input>
+	<label for="id">Complete</label>
+	<input type="text" class="date" value="{{journey.complete}}"></input>
+	<br />
+	<button class="btn btn-primary" ng:click="saveJourney()">Save</button>
+</div>
